@@ -1,59 +1,92 @@
-# Portfolio
+# Mihir's Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10.
+Welcome to my professional portfolio website! This is a modern, responsive, and interactive portfolio built with Angular 19, showcasing my full-stack development skills, projects, and professional journey.
 
-## Development server
+## 🚀 Features
 
-To start a local development server, run:
+- **Responsive Design**: Looks great on all devices
+- **Modern UI/UX**: Built with a clean, professional interface
+- **Project Showcase**: Highlighting my best work with detailed case studies
+- **Skills Section**: Displaying my technical expertise
+- **Contact Form**: Easy way to get in touch
+- **Dark/Light Mode**: Customizable theme options
 
-```bash
-ng serve
+## 🛠️ Tech Stack
+
+- **Frontend**: Angular 19, TypeScript, HTML5, SCSS
+- **Styling**: Angular Material, Flexbox, CSS Grid
+- **Animation**: Angular Animations
+- **Build Tool**: Angular CLI
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or later)
+- npm (v9 or later) or yarn
+- Angular CLI (v19 or later)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/portfolio-client.git
+   cd portfolio-client
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Start the development server:
+   ```bash
+   ng serve
+   ```
+
+4. Open your browser and navigate to `http://localhost:4200/`
+
+## 🏗️ Project Structure
+
+```
+src/
+├── app/
+│   ├── components/     # Reusable components
+│   ├── pages/          # Main page components
+│   ├── services/       # Data and API services
+│   ├── models/         # TypeScript interfaces/types
+│   ├── shared/         # Shared modules and components
+│   └── app.module.ts   # Root module
+├── assets/            # Static assets
+└── environments/      # Environment configurations
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 📦 Build & Deployment
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+To build the project for production:
 
 ```bash
-ng generate component component-name
+ng build --configuration production
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The build artifacts will be stored in the `dist/` directory.
 
-```bash
-ng generate --help
-```
+## 🤝 Contributing
 
-## Building
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-To build the project run:
+## 📄 License
 
-```bash
-ng build
-```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🌟 Show Your Support
 
-## Running unit tests
+Give a ⭐️ if this project helped you!
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 📬 Contact
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Email: your.email@example.com
+- LinkedIn: [your-linkedin](https://linkedin.com/in/yourprofile)
+- Portfolio: [yourwebsite.com](https://yourwebsite.com)
