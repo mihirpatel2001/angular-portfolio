@@ -29,12 +29,14 @@ Welcome to my professional portfolio website! This is a modern, responsive, and 
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/yourusername/portfolio-client.git
    cd portfolio-client
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    # or
@@ -42,6 +44,7 @@ Welcome to my professional portfolio website! This is a modern, responsive, and 
    ```
 
 3. Start the development server:
+
    ```bash
    ng serve
    ```
@@ -87,6 +90,6 @@ Give a ⭐️ if this project helped you!
 
 ## 📬 Contact
 
-- Email: your.email@example.com
-- LinkedIn: [your-linkedin](https://linkedin.com/in/yourprofile)
+- Email: mihirpatel6pg6@gmail.com
+- LinkedIn: [your-linkedin](www.linkedin.com/in/mihir-patel-88797a224)
 - Portfolio: [yourwebsite.com](https://yourwebsite.com)
