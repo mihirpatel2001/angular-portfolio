@@ -90,6 +90,6 @@ Give a ⭐️ if this project helped you!
 
 ## 📬 Contact
 
-- Email: mihirpatel6pg6@gmail.com
-- LinkedIn: [your-linkedin](www.linkedin.com/in/mihir-patel-88797a224)
-- Portfolio: [yourwebsite.com](https://yourwebsite.com)
+- Email: [mihirpatel6pg6@gmail.com](mailto:mihirpatel6pg6@gmail.com)
+- LinkedIn: [Mihir Patel](https://www.linkedin.com/in/mihir-patel-88797a224)
+- Portfolio: [mihirpatel.vercel.app](https://mihirpatel.vercel.app)
