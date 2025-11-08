@@ -1,0 +1,69 @@
+// Hero component styles
+.animate-text-gradient {
+  background-size: 200% auto;
+  animation: text-gradient 2s linear infinite;
+  background-image: linear-gradient(90deg, #2563eb, #c026d3, #2563eb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563eb' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+@keyframes text-gradient {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+// Custom background opacity classes
+.bg-primary-10 {
+  background-color: rgba(37, 99, 235, 0.1);
+}
+
+.bg-secondary-10 {
+  background-color: rgba(192, 38, 211, 0.1);
+}
+
+// Hero image responsive styles
+img {
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+// Import global breakpoints
+@import '../../../styles/breakpoints';
+
+// Ensure proper alignment on all devices using global breakpoints
+@include md-max {
+  .hero-content {
+    text-align: center;
+  }
+}
+
+// Smooth image loading
+img[loading="eager"] {
+  will-change: transform;
+} 

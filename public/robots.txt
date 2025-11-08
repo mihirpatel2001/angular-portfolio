@@ -1,0 +1,15 @@
+# robots.txt for Mihir Patel Portfolio
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://mihirpatel.dev/sitemap.xml
+
+# Disallow specific paths if needed (uncomment and modify as needed)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Crawl-delay (optional, in seconds)
+# Crawl-delay: 1
+

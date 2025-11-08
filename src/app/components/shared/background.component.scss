@@ -1,0 +1,13 @@
+// Background component styles
+:host {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+// Ensure proper stacking context
+section {
+  position: relative;
+  z-index: 1;
+} 

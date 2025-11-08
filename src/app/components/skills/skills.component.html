@@ -1,0 +1,223 @@
+<section [id]="id" class="relative py-12 sm:py-16 lg:py-24">
+  <!-- <app-background></app-background> -->
+  <div class="container mx-auto px-4 sm:px-6 relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <!-- IDE-like Interface -->
+      <div
+        class="relative bg-white dark:bg-[#0f172a] rounded-xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-colors duration-300 border border-white/20 dark:border-gray-700/20 dark:backdrop-blur-[16px] dark:backdrop-saturate-180"
+      >
+        <!-- Background Gradient -->
+        <div
+          class="absolute inset-0 dark:bg-[radial-gradient(at_47%_33%,hsl(217.00,91%,60%)_0,transparent_59%),radial-gradient(at_82%_65%,hsl(262.00,83%,58%)_0,transparent_55%)]"
+        ></div>
+
+        <!-- Glass Effect -->
+        <div
+          class="relative bg-white dark:bg-[rgba(15,23,42,0.75)] rounded-xl overflow-hidden dark:backdrop-blur-[16px] dark:backdrop-saturate-180"
+        >
+          <!-- IDE Header -->
+          <div
+            class="relative bg-gray-100 dark:bg-[rgba(15,23,42,0.75)] p-3 sm:p-4 flex items-center justify-between border-b border-gray-200/30 dark:border-gray-700/30 transition-colors duration-300 dark:backdrop-blur-[16px] dark:backdrop-saturate-180"
+          >
+            <div class="flex items-center gap-1.5 sm:gap-2">
+              <div class="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-red-500"></div>
+              <div class="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-accent-500"></div>
+              <div class="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-success-500"></div>
+            </div>
+            <div class="flex items-center gap-2 sm:gap-4">
+              <span class="text-gray-600 dark:text-gray-400 font-mono text-xs sm:text-sm"
+                >skills.ts</span
+              >
+              <span class="text-gray-600 dark:text-gray-400 font-mono text-xs sm:text-sm hidden sm:inline"
+                >typescript</span
+              >
+            </div>
+          </div>
+
+          <!-- IDE Content -->
+          <div class="p-4 sm:p-6 lg:p-8">
+            <!-- File Explorer -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
+              <!-- Sidebar -->
+              <div
+                class="lg:col-span-3 border-b lg:border-b-0 lg:border-r border-gray-200 dark:border-gray-700 pb-4 lg:pb-0 lg:pr-6 transition-colors duration-300"
+              >
+                <div class="flex items-center gap-2 mb-3 sm:mb-4">
+                  <i class="fas fa-folder-open text-accent-500 text-sm sm:text-base"></i>
+                  <span
+                    class="text-gray-700 dark:text-gray-300 font-mono text-xs sm:text-sm"
+                    >skills/</span
+                  >
+                </div>
+                <div class="flex lg:flex-col gap-2 sm:gap-3 overflow-x-auto lg:overflow-x-visible">
+                  <div
+                    *ngFor="let category of skills; let i = index"
+                    (click)="selectCategory(i)"
+                    (keydown.enter)="selectCategory(i)"
+                    (keydown.space)="selectCategory(i)"
+                    tabindex="0"
+                    role="button"
+                    [attr.aria-label]="'Select ' + category.category + ' category'"
+                    class="flex items-center gap-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded-lg transition-colors duration-300 whitespace-nowrap flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-primary-600"
+                    [class.bg-gray-100]="i === selectedCategory"
+                    [class.dark:bg-gray-700]="i === selectedCategory"
+                  >
+                    <i [class]="category.icon" class="text-primary-600 dark:text-primary-400 text-sm sm:text-base"></i>
+                    <span
+                      class="text-gray-700 dark:text-gray-300 font-mono text-xs sm:text-sm"
+                      >{{ category.category }}.ts</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Main Content -->
+              <div class="lg:col-span-9">
+                <!-- Code Editor Style -->
+                <div class="space-y-4 sm:space-y-6 overflow-x-auto">
+                  <!-- Import Section -->
+                  <div
+                    class="text-gray-600 dark:text-gray-400 font-mono text-xs sm:text-sm"
+                  >
+                    <div class="mb-2">
+                      // Importing
+                      {{ skills[selectedCategory].category }} skills
+                    </div>
+                    <div class="text-accent-600 dark:text-accent-400">
+                      import
+                    </div>
+                    <div class="pl-2 sm:pl-4">
+                      {{ "{" }} {{ skills[selectedCategory].category }}
+                      {{ "}" }} from './skills.types';
+                    </div>
+                  </div>
+
+                  <!-- Skills Interface -->
+                  <div class="space-y-2">
+                    <div class="text-primary-600 dark:text-primary-400 font-mono text-xs sm:text-sm">
+                      interface
+                    </div>
+                    <div
+                      class="pl-2 sm:pl-4 text-accent-600 dark:text-accent-400 font-mono text-xs sm:text-sm"
+                    >
+                      SkillSet {{ "{" }}
+                    </div>
+                    <div
+                      *ngFor="let skill of skills[selectedCategory].items"
+                      class="group pl-4 sm:pl-6 lg:pl-8 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4"
+                    >
+                      <span class="text-gray-700 dark:text-gray-300 font-mono text-xs sm:text-sm whitespace-nowrap"
+                        >{{ skill.name }}:</span
+                      >
+                      <!-- Animated Skill Level -->
+                      <div class="flex-1 relative h-5 sm:h-6 flex items-center min-w-0">
+                        <div
+                          class="absolute inset-0 bg-gray-200 dark:bg-gray-700 rounded-full transition-colors duration-300"
+                        ></div>
+                        <div
+                          class="absolute h-full bg-gradient-to-r from-primary-600 to-primary-500 dark:from-primary-600 dark:to-primary-400 rounded-full transition-all duration-300"
+                          [style.width]="skill.animatedPercentage + '%'"
+                        ></div>
+                        <span
+                          class="relative z-10 text-xs font-mono text-white ml-2 whitespace-nowrap"
+                          >{{ skill.animatedPercentage }}%</span
+                        >
+                        <!-- Tooltip -->
+                        <div
+                          class="absolute left-0 top-full mt-2 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg z-50 whitespace-nowrap hidden sm:block"
+                        >
+                          <div
+                            class="text-xs font-mono text-gray-700 dark:text-white"
+                          >
+                            Level:
+                            {{
+                              skill.animatedPercentage >= 90
+                                ? "Expert"
+                                : skill.animatedPercentage >= 75
+                                ? "Advanced"
+                                : "Intermediate"
+                            }}
+                          </div>
+                          <!-- Tooltip Arrow -->
+                          <div
+                            class="absolute left-2 -top-1 w-2 h-2 bg-gray-100 dark:bg-gray-700 transform rotate-45"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="pl-2 sm:pl-4 text-accent-600 dark:text-accent-400 font-mono text-xs sm:text-sm"
+                  >
+                    {{ "}" }}
+                  </div>
+                </div>
+
+                <!-- Methods Section -->
+                <div class="space-y-3 sm:space-y-4 mt-6 sm:mt-8">
+                  <div class="text-accent-600 dark:text-accent-400 font-mono text-xs sm:text-sm">
+                    class
+                  </div>
+                  <div
+                    class="pl-2 sm:pl-4 text-accent-600 dark:text-accent-400 font-mono text-xs sm:text-sm"
+                  >
+                    DeveloperSkills implements SkillSet {{ "{" }}
+                  </div>
+                  <div class="pl-4 sm:pl-6 lg:pl-8 space-y-2">
+                    <div class="text-primary-600 dark:text-primary-400 font-mono text-xs sm:text-sm">
+                      // {{ skills[selectedCategory].category }}
+                    </div>
+                    <div class="space-y-3 sm:space-y-4">
+                      <div
+                        *ngFor="let item of skills[selectedCategory].items"
+                        class="group"
+                      >
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                          <div class="flex items-center gap-2">
+                            <i
+                              [class]="skills[selectedCategory].icon"
+                              class="text-gray-400 text-sm sm:text-base"
+                            ></i>
+                            <span
+                              class="text-success-600 dark:text-success-400 font-mono text-xs sm:text-sm"
+                              >{{ item.name }}</span
+                            >
+                          </div>
+                          <!-- Mini Terminal -->
+                          <div
+                            class="sm:ml-4 bg-gray-100 dark:bg-gray-900 px-2 sm:px-3 py-1 rounded text-xs font-mono text-gray-700 dark:text-gray-300 transition-colors duration-300 overflow-x-auto"
+                          >
+                            npm install {{ item.name.toLowerCase() }} --save
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="pl-2 sm:pl-4 text-accent-600 dark:text-accent-400 font-mono text-xs sm:text-sm"
+                  >
+                    {{ "}" }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Status Bar -->
+          <div
+            class="bg-primary-600 dark:bg-primary-700 text-white text-xs font-mono p-2 sm:p-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4 transition-colors duration-300"
+          >
+            <div class="flex items-center gap-3 sm:gap-4 flex-wrap">
+              <span class="text-xs">TypeScript</span>
+              <span class="text-xs hidden sm:inline">UTF-8</span>
+            </div>
+            <div class="flex items-center gap-3 sm:gap-4 flex-wrap">
+              <span class="text-xs hidden sm:inline">Ln 42, Col 18</span>
+              <span class="text-xs">Spaces: 2</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

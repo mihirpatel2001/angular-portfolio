@@ -1,0 +1,22 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.scss']
+})
+export class FooterComponent implements OnInit {
+  currentYear: number = new Date().getFullYear();
+
+  ngOnInit() {
+    // Update copyright year
+    this.currentYear = new Date().getFullYear();
+  }
+
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+} 

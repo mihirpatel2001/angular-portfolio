@@ -1,0 +1,157 @@
+<section [id]="id" class="relative py-12 sm:py-16 lg:py-24">
+  <!-- <app-background></app-background> -->
+  <div class="container mx-auto px-4 sm:px-6 relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <!-- Hero Section -->
+      <div class="relative mb-12 sm:mb-16 lg:mb-24">
+        <div
+          class="relative p-6 sm:p-8 lg:p-12 bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl shadow-lg backdrop-blur-sm bg-opacity-80 dark:bg-opacity-80"
+        >
+          <div class="flex items-center gap-2 sm:gap-4 mb-6 sm:mb-8">
+            <div
+              class="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-primary-600 dark:bg-primary-400"
+            ></div>
+            <div
+              class="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-accent-600 dark:bg-accent-400"
+            ></div>
+            <div
+              class="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-success-600 dark:bg-success-400"
+            ></div>
+          </div>
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6"
+          >
+            <span class="text-primary-600 dark:text-primary-400">Mihir</span> Patel
+          </h2>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-6 sm:mb-8">
+            <span class="text-primary-600 dark:text-primary-400 font-mono text-sm sm:text-base"
+              >Frontend Developer</span
+            >
+            <span class="text-gray-400 hidden sm:inline">|</span>
+            <span class="text-primary-600 dark:text-primary-400 font-mono text-sm sm:text-base"
+              >Angular Specialist</span
+            >
+          </div>
+          <div
+            class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4 sm:p-6 font-mono text-xs sm:text-sm border border-gray-200 dark:border-gray-700 shadow-inner overflow-x-auto"
+          >
+            <div class="text-gray-400 mb-2">// About Me</div>
+            <div class="text-gray-600 dark:text-gray-300 whitespace-pre-wrap">
+              <span class="text-primary-600 dark:text-primary-400">const</span>
+              aboutMe = {{ "{" }}<br />
+              &nbsp;&nbsp;role:
+              <span class="text-success-600 dark:text-success-400"
+                >'Frontend Developer'</span
+              >,<br />
+              &nbsp;&nbsp;specialization:
+              <span class="text-success-600 dark:text-success-400">'Angular'</span
+              >,<br />
+              &nbsp;&nbsp;experience:
+              <span class="text-accent-600 dark:text-accent-400">3</span>,<br />
+              &nbsp;&nbsp;focus:
+              <span class="text-success-600 dark:text-success-400"
+                >'Creating exceptional web experiences'</span
+              ><br />
+              {{ "}" }};
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Section -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16 lg:mb-24">
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm bg-opacity-80 dark:bg-opacity-80 border border-gray-200 dark:border-gray-700"
+        >
+          <div
+            class="w-10 h-10 sm:w-12 sm:h-12 bg-primary-100 dark:bg-primary-900/20 rounded-xl flex items-center justify-center mb-4 sm:mb-6 shadow-inner"
+          >
+            <i
+              class="fab fa-angular text-primary-600 dark:text-primary-400 text-lg sm:text-xl"
+            ></i>
+          </div>
+          <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">
+            Frontend Development
+          </h3>
+          <p class="text-primary-600 dark:text-primary-400 text-xs sm:text-sm mb-3 sm:mb-4 font-mono">
+            2021 - Present
+          </p>
+          <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300">
+            Building scalable web applications with Angular, TypeScript, and
+            modern web technologies.
+          </p>
+        </div>
+
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm bg-opacity-80 dark:bg-opacity-80 border border-gray-200 dark:border-gray-700"
+        >
+          <div
+            class="w-10 h-10 sm:w-12 sm:h-12 bg-primary-100 dark:bg-primary-900/20 rounded-xl flex items-center justify-center mb-4 sm:mb-6 shadow-inner"
+          >
+            <i class="fas fa-code text-primary-600 dark:text-primary-400 text-lg sm:text-xl"></i>
+          </div>
+          <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">
+            UI/UX Design
+          </h3>
+          <p class="text-primary-600 dark:text-primary-400 text-xs sm:text-sm mb-3 sm:mb-4 font-mono">
+            2020 - 2021
+          </p>
+          <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300">
+            Creating intuitive user interfaces with a focus on accessibility and
+            performance.
+          </p>
+        </div>
+
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm bg-opacity-80 dark:bg-opacity-80 border border-gray-200 dark:border-gray-700"
+        >
+          <div
+            class="w-10 h-10 sm:w-12 sm:h-12 bg-primary-100 dark:bg-primary-900/20 rounded-xl flex items-center justify-center mb-4 sm:mb-6 shadow-inner"
+          >
+            <i
+              class="fas fa-graduation-cap text-primary-600 dark:text-primary-400 text-lg sm:text-xl"
+            ></i>
+          </div>
+          <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">
+            Education
+          </h3>
+          <p class="text-primary-600 dark:text-primary-400 text-xs sm:text-sm mb-3 sm:mb-4 font-mono">
+            2019 - 2021
+          </p>
+          <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300">
+            Master of Computer Applications with focus on web technologies and
+            software development.
+          </p>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="text-center">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-12">
+          <div class="flex items-center gap-3 sm:gap-4">
+            <div
+              class="w-10 h-10 sm:w-12 sm:h-12 bg-white dark:bg-gray-800 rounded-xl flex items-center justify-center shadow-lg backdrop-blur-sm bg-opacity-80 dark:bg-opacity-80 border border-gray-200 dark:border-gray-700"
+            >
+              <i
+                class="fas fa-envelope text-primary-600 dark:text-primary-400 text-base sm:text-xl"
+              ></i>
+            </div>
+            <p class="text-gray-900 dark:text-white text-sm sm:text-base lg:text-lg font-mono break-all sm:break-normal">
+              mihirpatel6pg6&#64;gmail.com
+            </p>
+          </div>
+          <div class="flex items-center gap-3 sm:gap-4">
+            <div
+              class="w-10 h-10 sm:w-12 sm:h-12 bg-white dark:bg-gray-800 rounded-xl flex items-center justify-center shadow-lg backdrop-blur-sm bg-opacity-80 dark:bg-opacity-80 border border-gray-200 dark:border-gray-700"
+            >
+              <i
+                class="fas fa-map-marker-alt text-primary-600 dark:text-primary-400 text-base sm:text-xl"
+              ></i>
+            </div>
+            <p class="text-gray-900 dark:text-white text-sm sm:text-base lg:text-lg font-mono">Ahmedabad, India</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

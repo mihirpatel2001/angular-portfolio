@@ -1,0 +1,252 @@
+// ============================================
+// BREAKPOINTS USAGE EXAMPLES
+// ============================================
+// This file shows examples of how to use the global breakpoints
+// DO NOT import this file - it's for reference only
+// ============================================
+
+// Import breakpoints in your component SCSS file
+@import '../../../styles/breakpoints';
+
+// ============================================
+// Example 1: Basic Responsive Styles
+// ============================================
+.example-component {
+  padding: 1rem;
+  font-size: 14px;
+  
+  @include sm {
+    padding: 1.5rem;
+    font-size: 16px;
+  }
+  
+  @include md {
+    padding: 2rem;
+    font-size: 18px;
+  }
+  
+  @include lg {
+    padding: 3rem;
+    font-size: 20px;
+  }
+}
+
+// ============================================
+// Example 2: Responsive Grid Layout
+// ============================================
+.responsive-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  
+  @include xs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @include sm {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  @include md {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  @include lg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  @include xl {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+// ============================================
+// Example 3: Mobile-First Navigation
+// ============================================
+.navigation {
+  // Mobile: hidden by default
+  display: none;
+  
+  // Tablet and above: show navigation
+  @include md {
+    display: flex;
+  }
+}
+
+// ============================================
+// Example 4: Max-Width Usage
+// ============================================
+.mobile-only {
+  // Only show on mobile (below md)
+  @include md-max {
+    display: block;
+  }
+  
+  // Hide on tablet and above
+  @include md {
+    display: none;
+  }
+}
+
+// ============================================
+// Example 5: Range-Based Styles
+// ============================================
+.tablet-only {
+  // Only apply styles between sm and lg
+  @include respond-to-range(sm, lg) {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+// ============================================
+// Example 6: Complex Responsive Component
+// ============================================
+.card-component {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  
+  // Small phones
+  @include xs {
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+  
+  // Regular phones
+  @include sm {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  // Tablets
+  @include md {
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  // Large tablets / small laptops
+  @include lg {
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  // Laptops
+  @include xl {
+    padding: 3rem;
+  }
+  
+  // Large desktops
+  @include xxl {
+    padding: 4rem;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+  }
+}
+
+// ============================================
+// Example 7: Using respond-to Mixin
+// ============================================
+.dynamic-component {
+  width: 100%;
+  
+  @include respond-to(sm) {
+    width: 90%;
+  }
+  
+  @include respond-to(md) {
+    width: 80%;
+  }
+  
+  @include respond-to(lg) {
+    width: 70%;
+  }
+  
+  @include respond-to(xl) {
+    width: 60%;
+  }
+}
+
+// ============================================
+// Example 8: Typography Scaling
+// ============================================
+.responsive-heading {
+  font-size: 1.5rem; // 24px
+  
+  @include xs {
+    font-size: 1.75rem; // 28px
+  }
+  
+  @include sm {
+    font-size: 2rem; // 32px
+  }
+  
+  @include md {
+    font-size: 2.5rem; // 40px
+  }
+  
+  @include lg {
+    font-size: 3rem; // 48px
+  }
+  
+  @include xl {
+    font-size: 3.5rem; // 56px
+  }
+  
+  @include xxl {
+    font-size: 4rem; // 64px
+  }
+}
+
+// ============================================
+// Example 9: Direct Variable Usage
+// ============================================
+.custom-media-query {
+  padding: 1rem;
+  
+  @media (min-width: $breakpoint-md) {
+    padding: 2rem;
+  }
+  
+  @media (min-width: $breakpoint-lg) {
+    padding: 3rem;
+  }
+  
+  @media (min-width: $breakpoint-xl) {
+    padding: 4rem;
+  }
+}
+
+// ============================================
+// Example 10: Combined Approach
+// ============================================
+.hybrid-component {
+  // Base mobile styles
+  display: block;
+  padding: 1rem;
+  
+  // Use max-width for mobile-specific styles
+  @include sm-max {
+    font-size: 14px;
+  }
+  
+  // Use min-width for larger screens
+  @include sm {
+    display: flex;
+    padding: 1.5rem;
+    font-size: 16px;
+  }
+  
+  @include md {
+    padding: 2rem;
+    font-size: 18px;
+  }
+  
+  @include lg {
+    padding: 3rem;
+    font-size: 20px;
+  }
+}
+

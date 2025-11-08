@@ -1,0 +1,129 @@
+// Global Breakpoints Variables
+// Use these breakpoints throughout the project for consistent responsive design
+
+$breakpoints: (
+  xs: 480px,   // Fold outer, small phones
+  sm: 640px,   // Regular phones
+  md: 768px,   // Large phones / small tablets
+  lg: 1024px,  // Tablets
+  xl: 1280px,  // Laptops
+  xxl: 1440px  // Large desktops / ultrawide
+);
+
+// Breakpoint values for direct use
+$breakpoint-xs: 480px;
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-xxl: 1440px;
+
+// Mixins for responsive design
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$breakpoint}";
+  }
+}
+
+// Mixin for max-width media queries
+@mixin respond-to-max($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint) - 1px) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$breakpoint}";
+  }
+}
+
+// Mixin for range media queries (between two breakpoints)
+@mixin respond-to-range($min, $max) {
+  @if map-has-key($breakpoints, $min) and map-has-key($breakpoints, $max) {
+    $min-width: map-get($breakpoints, $min);
+    $max-width: map-get($breakpoints, $max) - 1px;
+    @media (min-width: $min-width) and (max-width: $max-width) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$min} or #{$max}";
+  }
+}
+
+// Convenience mixins for each breakpoint
+@mixin xs {
+  @media (min-width: $breakpoint-xs) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: $breakpoint-xxl) {
+    @content;
+  }
+}
+
+// Max-width convenience mixins
+@mixin xs-max {
+  @media (max-width: $breakpoint-xs - 1px) {
+    @content;
+  }
+}
+
+@mixin sm-max {
+  @media (max-width: $breakpoint-sm - 1px) {
+    @content;
+  }
+}
+
+@mixin md-max {
+  @media (max-width: $breakpoint-md - 1px) {
+    @content;
+  }
+}
+
+@mixin lg-max {
+  @media (max-width: $breakpoint-lg - 1px) {
+    @content;
+  }
+}
+
+@mixin xl-max {
+  @media (max-width: $breakpoint-xl - 1px) {
+    @content;
+  }
+}
+
+@mixin xxl-max {
+  @media (max-width: $breakpoint-xxl - 1px) {
+    @content;
+  }
+}
+

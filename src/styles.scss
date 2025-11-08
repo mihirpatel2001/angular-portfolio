@@ -1,1 +1,292 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'tailwindcss/base' as *;
+@use 'tailwindcss/components' as *;
+@use 'tailwindcss/utilities' as *;
+
+// Import global breakpoints
+@import './styles/breakpoints';
+
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html.lenis {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .section {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+  
+  .heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-8;
+  }
+  
+  .subheading {
+    @apply text-xl md:text-2xl font-semibold mb-4;
+  }
+
+  /* Professional Theme System */
+  
+  /* Primary Buttons */
+  .btn-primary {
+    @apply px-6 py-3 bg-primary-600 text-white rounded-lg font-medium 
+           hover:bg-primary-700 transition-all duration-300 ease-in-out
+           shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-white dark:bg-gray-800 border-2 border-primary-600 
+           text-primary-600 dark:text-primary-400 rounded-lg font-medium 
+           hover:bg-primary-50 dark:hover:bg-gray-700 
+           transition-all duration-300 ease-in-out;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 bg-transparent border-2 border-gray-300 dark:border-gray-600 
+           text-gray-700 dark:text-gray-300 rounded-lg font-medium 
+           hover:border-primary-600 hover:text-primary-600 dark:hover:text-primary-400 
+           transition-all duration-300 ease-in-out;
+  }
+
+  .btn-gradient {
+    @apply px-6 py-3 bg-gradient-to-r from-primary-600 to-accent-600 
+           text-white rounded-lg font-semibold 
+           hover:from-primary-700 hover:to-accent-700
+           shadow-md hover:shadow-lg
+           transition-all duration-300 ease-in-out;
+  }
+
+  /* Icons */
+  .icon-primary {
+    @apply text-primary-600 dark:text-primary-400;
+  }
+
+  .icon-accent {
+    @apply text-accent-600 dark:text-accent-400;
+  }
+
+  .icon-success {
+    @apply text-success-600 dark:text-success-400;
+  }
+
+  /* Social Links */
+  .social-link-theme {
+    @apply w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-900/30 
+           flex items-center justify-center text-primary-600 dark:text-primary-400 
+           hover:bg-primary-600 hover:text-white dark:hover:bg-primary-600 dark:hover:text-white 
+           transition-all duration-300 ease-in-out;
+  }
+
+  /* Info Icons (Contact Information) */
+  .info-icon-theme {
+    @apply w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-900/30 
+           flex items-center justify-center
+           transition-all duration-300 ease-in-out;
+    
+    i {
+      @apply text-primary-600 dark:text-primary-400 text-lg;
+    }
+
+    &:hover {
+      @apply bg-primary-600 dark:bg-primary-600;
+      
+      i {
+        @apply text-white;
+      }
+    }
+  }
+
+  /* Cards */
+  .card-theme {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg 
+           border border-gray-200 dark:border-gray-700 
+           transition-all duration-300 hover:shadow-xl;
+  }
+
+  /* Text Styles */
+  .text-primary-theme {
+    @apply text-primary-600 dark:text-primary-400;
+  }
+
+  .text-accent-theme {
+    @apply text-accent-600 dark:text-accent-400;
+  }
+
+  .text-muted {
+    @apply text-gray-600 dark:text-gray-400;
+  }
+
+  /* Backgrounds */
+  .bg-primary-subtle {
+    @apply bg-primary-50 dark:bg-primary-900/20;
+  }
+
+  .bg-accent-subtle {
+    @apply bg-accent-50 dark:bg-accent-900/20;
+  }
+
+  /* Badges/Tags */
+  .badge-theme {
+    @apply px-3 py-1 bg-primary-100 dark:bg-primary-900/30 
+           text-primary-700 dark:text-primary-300 text-sm rounded-full 
+           font-medium;
+  }
+
+  /* Gradients */
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700;
+  }
+
+  .gradient-accent {
+    @apply bg-gradient-to-r from-primary-600 to-accent-600;
+  }
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.dark {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+.light {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.text-gradient {
+  background-image: linear-gradient(90deg, #2563eb, #c026d3, #2563eb);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-card {
+  background: rgba(15, 23, 42, 0.7);
+  color: #f8fafc;
+}
+
+.skill-bar {
+  height: 8px;
+  border-radius: 4px;
+  background-color: #e2e8f0;
+  overflow: hidden;
+}
+
+.dark .skill-bar {
+  background-color: #334155;
+}
+
+.skill-progress {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #2563eb, #c026d3);
+  transition: width 1s ease-in-out;
+}
+
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark .project-card {
+  color: #f8fafc;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dark .project-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.dark .timeline-item {
+  color: #f8fafc;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -38px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #c026d3);
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: -28px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(to bottom, #2563eb, #c026d3);
+}
+
+.toggle-checkbox:checked {
+  right: 0;
+  border-color: #2563eb;
+  background-color: #2563eb;
+}
+
+.toggle-checkbox:checked+.toggle-label {
+  background: linear-gradient(135deg, #2563eb, #c026d3);
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+} 
